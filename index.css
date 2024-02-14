@@ -5,6 +5,8 @@ body {
     padding: 0;
     width: 100vw;
     max-width: 1920px;
+    height: 200vh;
+    overflow-y: hidden;
 }
 .d-flex{
     display: flex;
@@ -15,7 +17,7 @@ body {
   width: 100%;
   height: 300px;
   background: #DDDDDD 0% 0% no-repeat padding-box;
-  height: 100vh;
+  height: 100vh
 
 }
 .swiper-wrapper{
@@ -25,6 +27,8 @@ body {
 
 .swiper-slide{
     width: 100%;
+    position: relative;
+    
 }
 .swiper-logo-wrapper{
     margin: 2rem 3rem;
@@ -66,12 +70,15 @@ body {
    
 }
 .swiper-info-wrapper{
+    
     width: 582.07px;
     font-family: "glac-reg",sans-serif;
-    margin-left: auto;
-    margin-right: 15%;
-    margin-top: 10%;
     
+    
+}
+.photo-info-wrapper{
+    display: flex;
+    justify-content: space-around;
 }
 .swiper-info-wrapper h2{
     font-size: 49.7px;
@@ -83,6 +90,7 @@ body {
     font-size: 71px;
     font-weight: normal;
     margin: 0.5rem 0;
+    
 }
 .swiper-info-wrapper p{
     font-size: 23.29px;
@@ -98,19 +106,64 @@ body {
     margin-top: 5rem;
     flex-wrap: wrap;
 }
-.swiper-socials img{
-    margin: 0 0.4rem;
+.swiper-socials img:hover{
+    scale: 1.2;
 }
-
+.swiper-socials img{
+    margin: 0 1rem;
+    scale: 1.5;
+}
+.swiper-subscribe{
+    position: absolute;
+    bottom: 10%;
+    left: calc(100% - 400px);
+    width: 360px;
+    font-family: "montserrat-bold",sans-serif;
+}
+.swiper-subscribe div{
+    width: 100%;
+    border: 3px solid #E93656;
+    border-radius: 8px;
+}
+.swiper-subscribe span{
+    color: #E93656;
+}
+.swiper-subscribe p{
+    color: #212121;
+    font-size: 24px;
+}
+.my-photo{
+   
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: red;
+}
 @media (max-width:750px){
+    .swiper-info-wrapper h1{
+        width: 80%;
+        text-align: center;
+    }
+    .photo-info-wrapper{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .swiper-subscribe{
+        width: 360px;
+        top: 90%;
+        left: calc(50% - 180px);
+        text-align: center;
+
+    }
     .d-flex{
         align-items: center;
         
         
     }
+    
     .swiper-page-mark p{
         font-size: 16px;
-        /* position:static; */
         top: 10%;
 
     }
@@ -132,9 +185,10 @@ body {
     .swiper-socials{
        display: flex;
        justify-content: center;
+       margin: 1rem;
     }
     .swiper-socials img{
-        scale: 1.5;
+        scale: unset;
         padding: 0.7rem;
     }
     .swiper-info-wrapper h2{

@@ -23,4 +23,16 @@
   font-style: normal;
 }
 
+@font-face {
+  
+  font-family: "Montserrat-Bold"; /* Give the font a meaningful name */
+  src:
+    local("montserrat-bold"), /* Reference local name for better fallback */
+    url("./fonts/Montserrat-Bold.ttf") format("woff2"), /* Modern browsers */
+    url("./fonts/FontName.woff") format("woff"), /* Fallback for older browsers */
+    url("./fonts/FontName.ttf") format("truetype"); /* Last resort */
+  font-weight: 400; /* Specify weights if available */
+  font-style: normal;
+}
+
   
