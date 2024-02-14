@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "poppins-extraBold"; /* Give the font a meaningful name */
+    src:
+      local("Font Name"), /* Reference local name for better fallback */
+      url("./fonts/Poppins-ExtraBold.woff2") format("woff2"), /* Modern browsers */
+      url("./fonts/FontName.woff") format("woff"), /* Fallback for older browsers */
+      url("./fonts/FontName.ttf") format("truetype"); /* Last resort */
+    font-weight: 400; /* Specify weights if available */
+    font-style: normal;
+
+   
+
+  }
+@font-face {
+  
+  font-family: "Glaciallndifference-regular"; /* Give the font a meaningful name */
+  src:
+    local("glac-reg"), /* Reference local name for better fallback */
+    url("./fonts/GlacialIndifference-Regular.ttf") format("woff2"), /* Modern browsers */
+    url("./fonts/FontName.woff") format("woff"), /* Fallback for older browsers */
+    url("./fonts/FontName.ttf") format("truetype"); /* Last resort */
+  font-weight: 400; /* Specify weights if available */
+  font-style: normal;
+}
+
+  
