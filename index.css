@@ -165,6 +165,7 @@ body {
     .swiper-page-mark p{
         font-size: 16px;
         top: 10%;
+        left: -30%;
 
     }
     .swiper-page-mark{
@@ -189,13 +190,13 @@ body {
     }
     .swiper-socials img{
         scale: unset;
-        padding: 0.7rem;
+        padding: 0.4rem;
     }
     .swiper-info-wrapper h2{
-        font-size: 35px;
+        font-size: 30px;
     }
     .swiper-info-wrapper h1{
-        font-size: 50px;
+        font-size: 40px;
     }
     .swiper-info-wrapper p{
         font-size: 20px;
