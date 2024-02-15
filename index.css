@@ -7,8 +7,8 @@ body {
     padding: 0;
     width: 100vw;
     max-width: 1920px;
-    height: 100vh;
-    overflow-y: hidden;
+    /* height: 100vh; */
+    overflow-x: hidden;
 }
 .d-flex{
     display: flex;
@@ -144,6 +144,23 @@ body {
     height: 300px;
     border-radius: 50%;
     background-color: red;
+}
+.about-section-image{
+    width: 430px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.about-section-part-1{
+    display: flex;
+    justify-content:center;
+}
+.about-text{
+    width: 450px;
+}
+.progress-wrapper{
+    display: flex;
+    flex-direction: column;
 }
 @media (max-width:750px){
     .swiper-info-wrapper h1{
