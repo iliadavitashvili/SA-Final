@@ -6,7 +6,7 @@ const swiper = new Swiper('.swiper', {
   
   
      autoplay: {
-     delay: 5000,
+     delay: 500000,
    },
   
    allowTouchMove:false
