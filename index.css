@@ -98,11 +98,11 @@ body {
   flex-wrap: wrap;
 }
 .swiper-socials img:hover {
-  scale: 1.2;
+  scale: 1.4;
 }
 .swiper-socials img {
-  margin: 0 1rem;
-  scale: 1.5;
+  margin: 0 0.5rem;
+  
 }
 .swiper-subscribe {
   position: absolute;
@@ -285,6 +285,7 @@ button {
     font-family: "muli",sans-serif;
     font-size: 14px;
 }
+
 @media (max-width: 750px) {
     .about-section-part-2{
         flex-direction: column;

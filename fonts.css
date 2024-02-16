@@ -1,74 +1,58 @@
 @font-face {
-    font-family: "poppins-extraBold"; /* Give the font a meaningful name */
+    font-family: "poppins-extraBold"; 
     src:
-      local("Font Name"), /* Reference local name for better fallback */
-      url("./fonts/Poppins-ExtraBold.woff2") format("woff2"), /* Modern browsers */
-      url("./fonts/FontName.woff") format("woff"), /* Fallback for older browsers */
-      url("./fonts/FontName.ttf") format("truetype"); /* Last resort */
-    font-weight: 400; /* Specify weights if available */
-    font-style: normal;
+      local("Font Name"), 
+      url("./fonts/Poppins-ExtraBold.woff2") format("woff2");
 
    
 
   }
 @font-face {
   
-  font-family: "Glaciallndifference-regular"; /* Give the font a meaningful name */
+  font-family: "Glaciallndifference-regular"; 
   src:
-    local("glac-reg"), /* Reference local name for better fallback */
-    url("./fonts/GlacialIndifference-Regular.ttf") format("ttf"), /* Modern browsers */
-    url("./fonts/FontName.woff") format("woff"), /* Fallback for older browsers */
-    url("./fonts/FontName.ttf") format("truetype"); /* Last resort */
-  font-weight: 400; /* Specify weights if available */
-  font-style: normal;
+    local("glac-reg"), 
+    url("./fonts/GlacialIndifference-Regular.ttf") format("ttf");
 }
 
 @font-face {
   
-  font-family: "Montserrat-Bold"; /* Give the font a meaningful name */
+  font-family: "Montserrat-Bold"; 
   src:
-    local("montserrat-bold"), /* Reference local name for better fallback */
-    url("./fonts/Montserrat-Bold.ttf") format("woff2"), /* Modern browsers */
-    url("./fonts/FontName.woff") format("woff"), /* Fallback for older browsers */
-    url("./fonts/FontName.ttf") format("truetype"); /* Last resort */
-  font-weight: 400; /* Specify weights if available */
-  font-style: normal;
+    local("montserrat-bold"), 
+    url("./fonts/Montserrat-Bold.ttf") format("woff2"); 
+ 
+ 
 }
 
 
 
 @font-face {
   
-  font-family: "Glaciallndifference-bold"; /* Give the font a meaningful name */
+  font-family: "Glaciallndifference-bold"; 
   src:
-    local("glac-bold"), /* Reference local name for better fallback */
-    url("./fonts/GlacialIndifference-Bold.woff2") format("woff2"), /* Modern browsers */
-    url("./fonts/FontName.woff") format("woff"), /* Fallback for older browsers */
-    url("./fonts/FontName.ttf") format("truetype"); /* Last resort */
-  font-weight: 400; /* Specify weights if available */
-  font-style: normal;
+    local("glac-bold"), 
+    url("./fonts/GlacialIndifference-Bold.woff2") format("woff2"); 
+ 
+ 
 }
 
 @font-face {
   
-  font-family: "Muli-regular"; /* Give the font a meaningful name */
+  font-family: "Muli-regular"; 
   src:
-    local("muli-reg"), /* Reference local name for better fallback */
-    url("./fonts/Muli-Regular.ttf") format("ttf"), /* Modern browsers */
-    url("./fonts/FontName.woff") format("woff"), /* Fallback for older browsers */
-    url("./fonts/FontName.ttf") format("truetype"); /* Last resort */
-  font-weight: 400; /* Specify weights if available */
-  font-style: normal;
+    local("muli-reg"), 
+    url("./fonts/Muli-Regular.ttf") format("ttf");
+ 
+ 
 }
 
 @font-face {
   
-  font-family: "muli"; /* Give the font a meaningful name */
+  font-family: "muli"; 
   src:
-    local("muli"), /* Reference local name for better fallback */
-    url("./fonts/Muli.woff2") format("woff2"), /* Modern browsers */
-    url("./fonts/FontName.woff") format("woff"), /* Fallback for older browsers */
-    url("./fonts/FontName.ttf") format("truetype"); /* Last resort */
-  font-weight: 400; /* Specify weights if available */
-  font-style: normal;
+    local("muli"), 
+    url("./fonts/Muli.woff2") format("woff2"); 
+ 
+ 
 }
