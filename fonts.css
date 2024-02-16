@@ -9,7 +9,7 @@
   }
 @font-face {
   
-  font-family: "Glaciallndifference-regular"; 
+  font-family: "glac-reg"; 
   src:
     local("glac-reg"), 
     url("./fonts/GlacialIndifference-Regular.ttf") format("ttf");
@@ -17,7 +17,7 @@
 
 @font-face {
   
-  font-family: "Montserrat-Bold"; 
+  font-family: "montserrat-bold"; 
   src:
     local("montserrat-bold"), 
     url("./fonts/Montserrat-Bold.ttf") format("woff2"); 
@@ -29,7 +29,7 @@
 
 @font-face {
   
-  font-family: "Glaciallndifference-bold"; 
+  font-family: "glac-bold"; 
   src:
     local("glac-bold"), 
     url("./fonts/GlacialIndifference-Bold.woff2") format("woff2"); 
@@ -39,7 +39,7 @@
 
 @font-face {
   
-  font-family: "Muli-regular"; 
+  font-family: "muli-reg"; 
   src:
     local("muli-reg"), 
     url("./fonts/Muli-Regular.ttf") format("ttf");
@@ -53,6 +53,15 @@
   src:
     local("muli"), 
     url("./fonts/Muli.woff2") format("woff2"); 
+ 
+ 
+}
+@font-face {
+  
+  font-family: "muli-light"; 
+  src:
+    local("muli"), 
+    url("./fonts/Muli-Light.woff2") format("woff2"); 
  
  
 }
