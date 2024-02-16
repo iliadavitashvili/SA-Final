@@ -37,7 +37,7 @@ window.addEventListener('scroll', function() {
   const windowHeight = window.innerHeight;
 
   
-  let scrolledPercentageJs = (windowHeight - positionFromTopHtml + 130) / windowHeight * 100;
+  let scrolledPercentageJs = (windowHeight - positionFromTopHtml + 550) / windowHeight * 100;
 
 
   scrolledPercentageJs = Math.min(Math.max(scrolledPercentageJs, 0), 100);
