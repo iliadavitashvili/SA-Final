@@ -8,22 +8,22 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-scrollbar",
   },
   allowTouchMove: false,
- 
-
-
 });
 
+const servicesEl = document.getElementById("services");
 
+const skills = [
+  "Best Service",
+  "Pixel Perfect",
+  "Unique Ideas",
+  "Helpful Support",
+  "HTML",
+  "CSS",
+  "Javascript",
+  "React",
+];
 
-
-
-
-
-const servicesEl = document.getElementById("services")
-
-const skills = ["Best Service","Pixel Perfect" ,"Unique Ideas","Helpful Support","HTML","CSS","Javascript","React"]
-
-skills.map(skill =>{
+skills.map((skill) => {
   servicesEl.innerHTML += `
   <div class="service-wrapper">
   <div class="service">
@@ -38,8 +38,8 @@ skills.map(skill =>{
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit aliquam necessitatibus maiores cum aspernatur, deleniti dolore ipsa aut vitae et, magni, officiis consequatur? Architecto soluta quia ratione quas adipisci itaque.</p>
   </div>
 </div>
-  `
-})
+  `;
+});
 
 const recommswiper = new Swiper(".recc-swiper", {
   direction: "horizontal",
@@ -48,25 +48,25 @@ const recommswiper = new Swiper(".recc-swiper", {
     delay: 50000,
   },
   pagination: {
-    el: '.swiper-paginationa',
-    clickable:true,
+    el: ".swiper-paginationa",
+    clickable: true,
     renderBullet: function (index, className) {
-      
-      return '<span class="' + className + '" style="background-color: transparent; border: 1px solid white;">' + (index + 1) + '</span>';
+      return (
+        '<span class="' +
+        className +
+        '" style="background-color: transparent; border: 1px solid white;">' +
+        (index + 1) +
+        "</span>"
+      );
     },
   },
- 
-  currentClass:"swiper-pagination-current",
+
+  currentClass: "swiper-pagination-current",
   allowTouchMove: false,
- 
-
-
 });
 
-
-
 function handleScroll() {
-  const jsBar = document.getElementById('js-bar');
+  const jsBar = document.getElementById("js-bar");
   const htmlBar = document.getElementById("html-bar");
   const cssBar = document.getElementById("css-bar");
   const reactBar = document.getElementById("react-bar");
@@ -78,7 +78,8 @@ function handleScroll() {
   const reactSpan = document.getElementById("react-bar-span");
   const windowHeight = window.innerHeight;
 
-  let scrolledPercentageHtml = (windowHeight - positionFromTopHtml) / windowHeight * 100;
+  let scrolledPercentageHtml =
+    ((windowHeight - positionFromTopHtml) / windowHeight) * 100;
   scrolledPercentageHtml = Math.min(Math.max(scrolledPercentageHtml, 0), 100);
 
   if (positionFromTopHtml < windowHeight) {
@@ -89,7 +90,7 @@ function handleScroll() {
     let currentValue = 0;
     const incrementInterval = setInterval(() => {
       if (currentValue >= 100) {
-        clearInterval(incrementInterval); 
+        clearInterval(incrementInterval);
       } else {
         currentValue += 1;
         htmlBar.value = currentValue;
@@ -101,16 +102,109 @@ function handleScroll() {
         reactBar.value = currentValue;
         reactSpan.textContent = `(${currentValue}%)`;
       }
-    }, 10); 
+    }, 10);
 
-    window.removeEventListener('scroll', handleScroll);
+    window.removeEventListener("scroll", handleScroll);
   } else {
     htmlSpan.textContent = `(${scrolledPercentageHtml.toFixed()}%)`;
     htmlBar.value = scrolledPercentageHtml;
   }
 }
 
-window.addEventListener('scroll', handleScroll);
+window.addEventListener("scroll", handleScroll);
 
+// latest projects
 
+let projects = [
+  { time: 2, name: "3D Mockup Design", id: "prd3" },
+  { time: 5, name: "Markup", id: "prmarkup" },
+  { time: 7, name: "Chat-box", id: "prchat-box" },
+  { time: 4, name: "movies", id: "prmovies" },
+  { time: 1, name: "music", id: "prmusic" },
+  { time: 8, name: "social", id: "prsocial" },
+];
+const projectsEl = document.getElementById("projects");
 
+projects.map((project) => {
+  projectsEl.innerHTML += `
+  <div class="project" >
+  <div class="project-inner-wrapper" id=${project.id}>
+  <div class="project-svg-wrapper">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="12"
+      viewBox="0 0 14 12"
+    >
+      <path
+        id="Forma_1_copy_10"
+        data-name="Forma 1 copy 10"
+        d="M1105,4100l-.98-.913c-3.64-3-6.02-5.021-6.02-7.5a3.673,3.673,0,0,1,3.85-3.588,4.306,4.306,0,0,0,6.3,0,3.673,3.673,0,0,1,3.85,3.588c0,2.478-2.38,4.5-6.02,7.5Z"
+        transform="translate(-1098 -4087.997)"
+        fill="#e93656"
+      />
+    </svg>
+  </div>
+  <p>${project.time} months ago</p>
+  <h2>${project.name}</h2>
+  </div>
+</div>
+  `;
+});
+
+let allProjectesClicked = false;
+const allProjectNav = document.getElementById("all");
+
+allProjectNav.addEventListener("click", function () {
+  const allProjectsEl = document.querySelectorAll(".project-inner-wrapper");
+  allProjectesClicked = !allProjectesClicked;
+
+  if (allProjectesClicked) {
+    allProjectsEl.forEach((project) => (project.style.opacity = "1"));
+    allProjectsEl.forEach(
+      (project) => (project.style.backgroundColor = "black")
+    );
+    allProjectsEl.forEach(
+      (project) => (project.style.border = "1px solid gray")
+    );
+    projects.forEach(
+      (project) =>
+        (document.getElementById(project.id.slice(2)).style.color = "white")
+    );
+  } else {
+    allProjectsEl.forEach((project) => (project.style.opacity = "0"));
+
+    projects.forEach(
+      (project) =>
+        (document.getElementById(project.id.slice(2)).style.color = "white")
+    );
+  }
+});
+
+document.addEventListener("click", function (e) {
+  let asd = projects.find((project) => `pr${e.target.id}` == project.id);
+  let foundId = asd?.id;
+
+  if (foundId) {
+    projects.forEach(
+      (project) => (document.getElementById(project.id).style.opacity = "0")
+    );
+    projects.forEach(
+      (project) =>
+        (document.getElementById(project.id.slice(2)).style.color = "white")
+    );
+    document.getElementById(foundId).style.opacity = "1";
+    document.getElementById(foundId).style.backgroundColor = "black";
+    document.getElementById(foundId)?.setAttribute("data", "clickced");
+    document.getElementById(e.target.id).style.color = "#E93656";
+  } else {
+    document.getElementById(foundId)?.setAttribute("data", "unclicked");
+
+    document.getElementById(foundId).style.opacity = "0";
+  }
+  // console.log(e.target.id === document.getElementById(`pr${id}`))
+});
+
+document.getElementsByClassName("project").addEventListener("mouseEnter",function(){
+  document.getElementsByClassName("project-inner-wrapper").style.opacity ="1"
+})
