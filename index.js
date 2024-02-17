@@ -200,11 +200,34 @@ document.addEventListener("click", function (e) {
   } else {
     document.getElementById(foundId)?.setAttribute("data", "unclicked");
 
-    document.getElementById(foundId).style.opacity = "0";
+    // document.getElementById(foundId).style.opacity = "0";
   }
-  // console.log(e.target.id === document.getElementById(`pr${id}`))
+
 });
 
-document.getElementsByClassName("project").addEventListener("mouseEnter",function(){
-  document.getElementsByClassName("project-inner-wrapper").style.opacity ="1"
+
+document.addEventListener("mouseover",function(e){
+  let asd = projects.find((project) => `${e.target.id}` == project.id);
+  // console.log(asd.id)
+  let foundId = asd?.id;
+
+  if (foundId) {
+    projects.forEach(
+      (project) => (document.getElementById(project.id).style.opacity = "0")
+    );
+    projects.forEach(
+      (project) =>
+        (document.getElementById(project.id.slice(2)).style.color = "white")
+    );
+    document.getElementById(foundId).style.opacity = "1";
+    document.getElementById(foundId).style.backgroundColor = "black";
+    document.getElementById(foundId)?.setAttribute("data", "clickced");
+    document.getElementById(e.target.id).style.color = "#E93656";
+  } else {
+    document.getElementById(foundId)?.setAttribute("data", "unclicked");
+
+    // document.getElementById(foundId).style.opacity = "0";
+  }
+  
 })
+
