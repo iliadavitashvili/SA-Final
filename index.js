@@ -8,19 +8,11 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-scrollbar",
   },
   allowTouchMove: false,
-  pagination: {
-    el: ".swiper-pagination",
-  },
-  autoplay: {
-    delay: 5000,
-  },
+ 
 
 
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
 });
+
 
 
 
@@ -79,3 +71,31 @@ skills.map(skill =>{
 </div>
   `
 })
+
+const recommswiper = new Swiper(".recc-swiper", {
+  direction: "horizontal",
+
+  autoplay: {
+    delay: 50000,
+  },
+  pagination: {
+    el: '.swiper-paginationa',
+    clickable:true,
+    renderBullet: function (index, className) {
+      
+      return '<span class="' + className + '" style="background-color: transparent; border: 1px solid white;">' + (index + 1) + '</span>';
+    },
+  },
+  // navigation: {
+  //   nextEl: '.swiper-button-next',
+  //   prevEl: '.swiper-button-prev',
+  // },
+  // scrollbar: {
+  //   el: ".swiper-scrollbar",
+  // },
+  currentClass:"swiper-pagination-current",
+  allowTouchMove: false,
+ 
+
+
+});

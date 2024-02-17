@@ -12,7 +12,7 @@
   font-family: "glac-reg"; 
   src:
     local("glac-reg"), 
-    url("./fonts/GlacialIndifference-Regular.ttf") format("ttf");
+    url("./fonts/GlacialIndifference-Regular.ttf") format("trueType");
 }
 
 @font-face {
@@ -62,6 +62,24 @@
   src:
     local("muli"), 
     url("./fonts/Muli-Light.woff2") format("woff2"); 
+ 
+ 
+}
+@font-face {
+  
+  font-family: "roboto-light"; 
+  src:
+    local("roboto-light"), 
+    url("./fonts/Roboto-Light.woff2") format("woff2"); 
+ 
+ 
+}
+@font-face {
+  
+  font-family: "roboto-regular"; 
+  src:
+    local("roboto-regular"), 
+    url("./fonts/Roboto-Regular.woff") format("woff"); 
  
  
 }
