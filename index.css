@@ -351,6 +351,7 @@ button {
   position: relative;
   max-width: 1920px;
   height: 570px;
+  overflow: hidden;
 }
 .recc-swiper p{
   max-width: 500px;
@@ -420,7 +421,9 @@ button {
   
   
 }
-
+#html-bar{
+  transition: 0.3s;
+}
 
 @media (max-width: 750px) {
   .recc-swiper p{

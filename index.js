@@ -16,38 +16,7 @@ const swiper = new Swiper(".swiper", {
 
 
 
-window.addEventListener('scroll', function() {
-  const jsBar = document.getElementById('js-bar');
-  const htmlBar = document.getElementById("html-bar")
-  const cssBar = document.getElementById("css-bar")
-  const reactBar = document.getElementById("react-bar")
-  const positionFromTopHtml = cssBar.getBoundingClientRect().top;
 
-  
-  const jsSpan = this.document.getElementById("js-bar-span")
-  const htmlSpan = this.document.getElementById("html-bar-span")
-  const cssSpan = this.document.getElementById("css-bar-span")
-  const reactSpan = this.document.getElementById("react-bar-span")
-  const windowHeight = window.innerHeight;
-
-  
-  let scrolledPercentageJs = (windowHeight - positionFromTopHtml + 550) / windowHeight * 100;
-
-
-  scrolledPercentageJs = Math.min(Math.max(scrolledPercentageJs, 0), 100);
-
- 
-  jsSpan.textContent = `(${(scrolledPercentageJs - 10 <= 70 ? scrolledPercentageJs - 10 : 70 ).toFixed()}%)`
-  jsBar.value = scrolledPercentageJs - 10 <= 70 ? scrolledPercentageJs - 10 : 70 ;
-  htmlSpan.textContent = `(${(scrolledPercentageJs - 10 <= 80 ? scrolledPercentageJs - 10 : 80 ).toFixed()}%)`
-  htmlBar.value = scrolledPercentageJs - 10 <= 80 ? scrolledPercentageJs - 10 : 80 ;
-  cssSpan.textContent = `(${(scrolledPercentageJs - 10 <= 70 ? scrolledPercentageJs - 10 : 70 ).toFixed()}%)`
-  cssBar.value = scrolledPercentageJs - 10 <= 70 ? scrolledPercentageJs - 10 : 70 ;
-  reactSpan.textContent = `(${(scrolledPercentageJs - 10 <= 80 ? scrolledPercentageJs - 10 : 80 ).toFixed()}%)`
-  reactBar.value = scrolledPercentageJs - 10 <= 80 ? scrolledPercentageJs - 10 : 80 ;
-  
-
-});
 
 
 const servicesEl = document.getElementById("services")
@@ -86,16 +55,62 @@ const recommswiper = new Swiper(".recc-swiper", {
       return '<span class="' + className + '" style="background-color: transparent; border: 1px solid white;">' + (index + 1) + '</span>';
     },
   },
-  // navigation: {
-  //   nextEl: '.swiper-button-next',
-  //   prevEl: '.swiper-button-prev',
-  // },
-  // scrollbar: {
-  //   el: ".swiper-scrollbar",
-  // },
+ 
   currentClass:"swiper-pagination-current",
   allowTouchMove: false,
  
 
 
 });
+
+
+
+function handleScroll() {
+  const jsBar = document.getElementById('js-bar');
+  const htmlBar = document.getElementById("html-bar");
+  const cssBar = document.getElementById("css-bar");
+  const reactBar = document.getElementById("react-bar");
+  const positionFromTopHtml = htmlBar.getBoundingClientRect().top;
+
+  const jsSpan = document.getElementById("js-bar-span");
+  const htmlSpan = document.getElementById("html-bar-span");
+  const cssSpan = document.getElementById("css-bar-span");
+  const reactSpan = document.getElementById("react-bar-span");
+  const windowHeight = window.innerHeight;
+
+  let scrolledPercentageHtml = (windowHeight - positionFromTopHtml) / windowHeight * 100;
+  scrolledPercentageHtml = Math.min(Math.max(scrolledPercentageHtml, 0), 100);
+
+  if (positionFromTopHtml < windowHeight) {
+    htmlSpan.textContent = `(0%)`;
+    cssSpan.textContent = `(0%)`;
+    jsSpan.textContent = `(0%)`;
+    reactSpan.textContent = `(0%)`;
+    let currentValue = 0;
+    const incrementInterval = setInterval(() => {
+      if (currentValue >= 100) {
+        clearInterval(incrementInterval); 
+      } else {
+        currentValue += 1;
+        htmlBar.value = currentValue;
+        htmlSpan.textContent = `(${currentValue}%)`;
+        cssBar.value = currentValue;
+        cssSpan.textContent = `(${currentValue}%)`;
+        jsBar.value = currentValue;
+        jsSpan.textContent = `(${currentValue}%)`;
+        reactBar.value = currentValue;
+        reactSpan.textContent = `(${currentValue}%)`;
+      }
+    }, 10); 
+
+    window.removeEventListener('scroll', handleScroll);
+  } else {
+    htmlSpan.textContent = `(${scrolledPercentageHtml.toFixed()}%)`;
+    htmlBar.value = scrolledPercentageHtml;
+  }
+}
+
+window.addEventListener('scroll', handleScroll);
+
+
+
