@@ -399,7 +399,6 @@ button {
   margin-right: 200px;
   display: flex;
   justify-content: center;
-  /* align-items:flex-end; */
   padding-left: 20px;
   gap: 2rem;
   right: 30%;
@@ -415,7 +414,6 @@ button {
   border: 1px solid white;
   border-radius: 0;
   color: transparent;
-  /* justify-self: end; */
   display: block;
   margin-left: auto
   
@@ -446,7 +444,7 @@ button {
   background-color: #15263E;
   color: white;
   padding: 2rem;
-  /* align-items:unset; */
+
 
 }
 
@@ -459,7 +457,7 @@ button {
   text-transform: capitalize;
 }
 .latest-projects li:hover{
-  color: #E93656;
+  color: #E93656 !important;
 
 }
 .projects{
@@ -480,11 +478,10 @@ button {
   height: 350px;
   color: white;
   font-family: "glac-bold",sans-serif;
-  /* display: none;
-  opacity: 0; */
+
 }
 .project:hover .project-inner-wrapper{
-  /* display: flex; */
+
   opacity: 1;
   background-color: black;
 }
@@ -497,7 +494,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* display: none; */
+
   opacity: 0;
   border: 1px solid gray;
 }
@@ -508,7 +505,7 @@ button {
 .project svg{
   margin: 1rem;
   scale: 2;
-  /* padding: 0.5rem; */
+ 
 }
 .project-svg-wrapper{
   outline: 2px solid #E93656;
@@ -522,9 +519,11 @@ button {
 .opacity-0{
   opacity: 0;
 }
-.color-white{
+.red{
+  color: #E93656;
+}
+.white{
   color: white;
-  background-color: white;
 }
 @media (max-width: 750px) {
   .latest-projects nav{

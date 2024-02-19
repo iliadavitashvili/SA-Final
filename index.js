@@ -158,7 +158,6 @@ const allProjectNav = document.getElementById("all");
 allProjectNav.addEventListener("click", function () {
   const allProjectsEl = document.querySelectorAll(".project-inner-wrapper");
   allProjectesClicked = !allProjectesClicked;
-
   if (allProjectesClicked) {
     allProjectsEl.forEach((project) => (project.style.opacity = "1"));
     allProjectsEl.forEach(
@@ -206,7 +205,9 @@ document.addEventListener("click", function (e) {
 });
 
 
+
 document.addEventListener("mouseover",function(e){
+
   let asd = projects.find((project) => `${e.target.id}` == project.id);
   // console.log(asd.id)
   let foundId = asd?.id;
@@ -228,6 +229,7 @@ document.addEventListener("mouseover",function(e){
 
     // document.getElementById(foundId).style.opacity = "0";
   }
+  document.querySelectorAll("li").forEach(item => item.id == e.target.id ? item.classList.add("red") : item.classList.add("white"))
   
 })
 
