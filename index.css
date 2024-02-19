@@ -5,6 +5,8 @@
 body {
   margin: 0 auto;
   padding: 0;
+  display: flex;
+  flex-direction: column;
   width: 100vw;
   max-width: 1920px;
   /* height: 100vh; */
@@ -434,6 +436,7 @@ button {
   justify-content: center;
   align-items: start;
   gap: 2rem;
+  height:fit-content
 }
 .latest-projects nav ul{
   display: flex;
@@ -525,7 +528,114 @@ button {
 .white{
   color: white;
 }
+
+.latest-articles{
+  width: 100%;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  /* height: auto; */
+}
+.article{
+  display: flex;
+  width: 90%;
+  height: auto;
+  
+ }
+.article-content{
+  background-color: #FAFAFA;
+  font-family: "muli",sans-serif;
+  width: 45%;
+  display: flex;
+  height: 500px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding-left: 2rem;
+}
+.latest-articles > *:nth-child(odd){
+  align-self: flex-end;
+}
+.title {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+ .title p ,  .title span{
+  text-align: center;
+  font-family: "glac-bold",sans-serif;
+  padding: 0;
+  margin: 0;
+
+}
+.title span{
+  font-size: 70px;
+  color: #2E2E2E;
+}
+.title p{
+  color: #2ED279;
+  font-size: 13px;
+}
+.article-content h2{
+  font-family: "glac-bold",sans-serif;
+  font-size: 40px;
+  color: #161616;
+}
+.article-content span{
+  font-size: 14px;
+  color: #888888;
+}
+
+.article-content p{
+  max-width: 75%;
+  color: #494949;
+  padding-bottom: 5rem;
+}
+.article-date{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  width: 8.3%;
+  background-color: #15263E;
+}
+
+.article-blank{
+ 
+  width:48%;
+  background-color: #E1E0DC;
+}
+.article-date p{
+  font-size: 30px;
+  color: #E93656;
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+  font-family: "glac-bold",sans-serif;
+}
 @media (max-width: 750px) {
+  .title span{
+    font-size: 40px;
+    margin-top: 2rem;
+  }
+ .article-blank{
+  display: none;
+ }
+ .article-date p{
+  writing-mode: unset;
+  transform: unset;
+ }
+ .article-date {
+  /* display: none; */
+  width: auto;
+
+ }
+ .article{
+  flex-direction: column;
+ }
+ .latest-articles > *:nth-child(od){
+  flex-direction: column;
+ }
+ 
   .latest-projects nav{
     display: none;
   }
@@ -540,6 +650,14 @@ button {
   }
   .reccommendation-swiper{
     flex-direction: column;
+  }
+  .projects{
+    height: auto;
+  }
+  .article-content{
+    height: unset;
+    width: 100%;
+    margin: 0.5rem 0;
   }
   .services{
    
