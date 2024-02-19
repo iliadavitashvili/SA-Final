@@ -536,6 +536,9 @@ button {
   flex-direction: column;
   /* height: auto; */
 }
+.latest-articles > *:nth-child(even){
+  flex-direction: row-reverse;
+}
 .article{
   display: flex;
   width: 90%;
@@ -613,6 +616,9 @@ button {
   font-family: "glac-bold",sans-serif;
 }
 @media (max-width: 750px) {
+  .latest-articles > *:nth-child(even){
+    flex-direction: column;
+  }
   .title span{
     font-size: 40px;
     margin-top: 2rem;
@@ -632,7 +638,7 @@ button {
  .article{
   flex-direction: column;
  }
- .latest-articles > *:nth-child(od){
+ .latest-articles > *:nth-child(odd){
   flex-direction: column;
  }
  
