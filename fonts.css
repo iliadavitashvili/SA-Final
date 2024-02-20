@@ -7,6 +7,16 @@
    
 
   }
+  @font-face {
+    font-family: "poppins-semi"; 
+    src:
+      local("Font Name"), 
+      url("./fonts/Poppins-SemiBold.woff2") format("woff2");
+
+   
+
+  }
+  
 @font-face {
   
   font-family: "glac-reg"; 

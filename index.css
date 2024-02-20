@@ -615,7 +615,68 @@ button {
   transform: rotate(-180deg);
   font-family: "glac-bold",sans-serif;
 }
+.rosa-team{
+  display: flex;
+  gap: 110px;
+  justify-content: center;
+  margin: 5rem 0;
+}
+.parthner{
+  position: relative;
+  width: 110px;
+  height: 110px;
+  cursor: pointer;
+  background-color: #15263E;
+  transition: 0.3s;
+}
+
+.parthner div{
+  position: absolute;
+  cursor: pointer;
+  top: -2rem;
+  display: none;
+  border: 3px solid #E93656;
+  transition: 0.3s;
+}
+.parthner div h3{
+  padding: 0;
+  margin: 0;
+}
+.parthner:hover{
+  background-color: unset;
+}
+.parthner:hover >  div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  margin-left: -50px;
+  text-align: center;
+
+}
+.parthner div h3{
+  font-family: "poppins-semi";
+  font-size: 16px;
+  color: #161616;
+}
+.parthner div p{
+  font-family: "roboto-light";
+  color: #626262;
+  font-size: 13px;
+}
+
 @media (max-width: 750px) {
+  
+  .rosa-team{
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3.8rem;
+    
+  }
+ 
   .latest-articles > *:nth-child(even){
     flex-direction: column;
   }
