@@ -624,7 +624,25 @@ background-image: url("https://unblast.com/wp-content/uploads/2020/05/Graphic-De
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-
+}
+.parthner:last-child{
+  background-image: url("https://1000logos.net/wp-content/uploads/2018/02/Logo-Tesla.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+ 
+}
+.parthner:nth-child(2){
+  background-image: url("https://static.standard.co.uk/2022/09/19/11/newFile-2.jpg?width=1200");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.parthner:nth-child(3){
+  background-image: url("https://logowik.com/content/uploads/images/meta-black-wordmark9054.logowik.com.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .parthner {
   position: relative;
