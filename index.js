@@ -233,3 +233,102 @@ document.addEventListener("mouseover",function(e){
   
 })
 
+const inputField = document.getElementById("form");
+const validateEmail = (email) => {
+  return email.match(
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  );
+};
+const fbMessage = document.getElementById("fb-message")
+inputField.addEventListener("submit",function(e){
+  e.preventDefault()
+  const formValues = document.forms.form;
+  
+  try{
+    if(formValues.name.value.length >2){
+      formValues.name.style.border = "5px solid green"
+    }else{
+      
+
+      formValues.name.style.border = "3px solid red"
+      throw new Error("name should be longer")
+
+    }
+    if(formValues.page.value.length >1){
+      formValues.page.style.border = "5px solid green"
+    }else{
+      
+
+      formValues.page.style.border = "3px solid red"
+      throw new Error("webpage name should be longer")
+
+
+    }
+    if(formValues.message.value.length >8){
+      formValues.message.style.border = "5px solid green"
+
+    }else{
+      
+
+      formValues.message.style.border = "3px solid red"
+      throw new Error("Message should be longer")
+
+
+    }
+    if(validateEmail(formValues.email.value ) ){
+      formValues.email.style.border = "5px solid green"
+      console.log(formValues.email.value)
+
+    }else{
+      
+
+      formValues.email.style.border = "3px solid red"
+      throw new Error("invalid email")
+      
+
+    }
+    const userData = {
+      userName: formValues.name.value,
+      
+      userEmail: formValues.email.value,
+     
+      userPage:formValues.page.value,
+      userMessage:formValues.message.value
+    };
+    
+    const posta = {
+      method:"POST",
+      body: JSON.stringify(userData),
+      headers:{
+        "Content-Type":"application/json"
+      }
+    }
+    fetch("https://jsonplaceholder.typicode.com/posts",posta)
+      .then(res => {
+        if(!res.ok){
+          throw new Error("some error ")
+        }
+        return res.json();
+      })
+      .then(data => {
+        fbMessage.style.display =" block"
+        setTimeout(() => {
+          fbMessage.style.display ="none"
+        }, 3000)
+        formValues.name.value = ""
+        formValues.email.value = ""
+        formValues.page.value = ""
+        formValues.message.value = ""
+      formValues.name.style.border = "3px solid transparent"
+      formValues.page.style.border = "3px solid transparent"
+      formValues.message.style.border = "3px solid transparent"
+      formValues.email.style.border = "3px solid transparent"
+
+
+      })
+      .catch(err => console.log(err))
+  }catch(err){
+    
+
+  }
+})

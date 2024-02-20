@@ -9,7 +9,6 @@ body {
   flex-direction: column;
   width: 100vw;
   max-width: 1920px;
-  /* height: 100vh; */
   overflow-x: hidden;
 }
 .d-flex {
@@ -202,11 +201,11 @@ progress {
   width: 100%;
 }
 progress::-webkit-progress-value {
-  background-color: red; /* Green */
+  background-color: red; 
   border-radius: 18px;
 }
 progress::-webkit-progress-bar {
-  background-color: #f1f1f1; /* Light gray */
+  background-color: #f1f1f1; 
   border-radius: 18px;
 }
 button {
@@ -469,18 +468,16 @@ button {
   width: 300px;
   height: 350px;
   color: white;
-background-image: url("https://lili.co/wp-content/uploads/2022/03/Graphic-Design-Business.jpg");
+  background-image: url("https://lili.co/wp-content/uploads/2022/03/Graphic-Design-Business.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   /* background-size: auto; */
   background-position: center;
   font-family: "glac-bold", sans-serif;
   border: 2px solid silver;
-  
 }
-.project:nth-child(odd){
-background-image: url("https://unblast.com/wp-content/uploads/2020/05/Graphic-Design-Vector-Illustration.jpg");
-
+.project:nth-child(odd) {
+  background-image: url("https://unblast.com/wp-content/uploads/2020/05/Graphic-Design-Vector-Illustration.jpg");
 }
 .project:hover .project-inner-wrapper {
   opacity: 1;
@@ -586,7 +583,6 @@ background-image: url("https://unblast.com/wp-content/uploads/2020/05/Graphic-De
   color: #888888;
 }
 
-
 .article-content p {
   max-width: 75%;
   color: #494949;
@@ -619,26 +615,25 @@ background-image: url("https://unblast.com/wp-content/uploads/2020/05/Graphic-De
   justify-content: center;
   margin: 5rem 0;
 }
-.parthner:nth-child(odd){
+.parthner:nth-child(odd) {
   background-image: url("https://static.vecteezy.com/system/resources/previews/019/136/302/original/adidas-logo-adidas-icon-free-free-vector.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
-.parthner:last-child{
+.parthner:last-child {
   background-image: url("https://1000logos.net/wp-content/uploads/2018/02/Logo-Tesla.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
- 
 }
-.parthner:nth-child(2){
+.parthner:nth-child(2) {
   background-image: url("https://static.standard.co.uk/2022/09/19/11/newFile-2.jpg?width=1200");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
-.parthner:nth-child(3){
+.parthner:nth-child(3) {
   background-image: url("https://logowik.com/content/uploads/images/meta-black-wordmark9054.logowik.com.webp");
   background-size: contain;
   background-repeat: no-repeat;
@@ -673,7 +668,6 @@ background-image: url("https://unblast.com/wp-content/uploads/2020/05/Graphic-De
 .parthner:hover {
   background-color: unset;
   background-image: unset;
-  
 }
 .parthner:hover > div {
   display: flex;
@@ -695,10 +689,107 @@ background-image: url("https://unblast.com/wp-content/uploads/2020/05/Graphic-De
   color: #626262;
   font-size: 13px;
 }
+.form-container {
+  width: 100%;
+  height: 560px;
+  background-image: url("./images/map.jpg");
+  background-size: cover;
+  background-blend-mode: hue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-container input {
+  height: 50px;
+}
+textarea {
+  height: 100px;
+}
+.form-container input::placeholder,
+textarea::placeholder {
+  padding-left: 1rem;
+  padding-top: 1rem;
+  position: relative;
+}
 
+.bd-filter {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: brightness(0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-container h2 {
+  font-family: "jako", sans-serif;
+  font-size: 45px;
+  color: #ffffff;
+  margin-bottom: 0;
+}
+
+.form-container p {
+  color: #eeeeee;
+  font-size: 17px;
+  font-family: "roboto-light", sans-serif;
+  margin-bottom: 3rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form button {
+  margin-top: 2rem;
+  width: 180px;
+  height: 50px;
+  border: 2px solid #e93656;
+  color: #e93656;
+  background-color: transparent;
+  font-family: "glac-bold", sans-serif;
+  font-size: 12px;
+}
+.form-div {
+  position: relative;
+  display: grid;
+  gap: 0.3rem;
+  grid-template-columns: repeat(3, minmax(auto, 290px));
+}
+textarea {
+  grid-column: 1/-1;
+}
+
+#fb-message {
+  position: absolute;
+  top: 20%;
+  z-index: 900;
+  color: Green;
+  font-family: "glac-bold";
+  background-color: silver;
+  border: 3px solid green;
+  padding: 50px;
+  display: none;
+  text-align: center;
+  width: 80%;
+}
 @media (max-width: 750px) {
+  .form-container {
+    height: 650px;
+  }
+  .form-div {
+    grid-template-columns: auto;
+  }
+  .form-container input {
+    width: 90vw;
+  }
+  .form-container p {
+    text-align: center;
+  }
+  #fb-message {
+    font-size: 26px;
+  }
   .rosa-team {
-    /* flex-direction: column; */
     flex-wrap: wrap;
     align-items: center;
     gap: 3.8rem;

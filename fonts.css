@@ -27,6 +27,14 @@
 
 @font-face {
   
+  font-family: "jako"; 
+  src:
+    local("glac-reg"), 
+    url("./fonts/Jaapokki-Regular.woff") format("trueType");
+}
+
+@font-face {
+  
   font-family: "montserrat-bold"; 
   src:
     local("montserrat-bold"), 
