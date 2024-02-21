@@ -1,3 +1,5 @@
+// page one code
+
 const swiper = new Swiper(".swiper", {
   direction: "horizontal",
 
@@ -9,6 +11,8 @@ const swiper = new Swiper(".swiper", {
   },
   allowTouchMove: false,
 });
+
+// services code
 
 const servicesEl = document.getElementById("services");
 
@@ -41,6 +45,8 @@ skills.map((skill) => {
   `;
 });
 
+// lastest projects code
+
 const recommswiper = new Swiper(".recc-swiper", {
   direction: "horizontal",
 
@@ -64,6 +70,8 @@ const recommswiper = new Swiper(".recc-swiper", {
   currentClass: "swiper-pagination-current",
   allowTouchMove: false,
 });
+
+// more info about me section code
 
 function handleScroll() {
   const jsBar = document.getElementById("js-bar");
@@ -198,16 +206,10 @@ document.addEventListener("click", function (e) {
     document.getElementById(e.target.id).style.color = "#E93656";
   } else {
     document.getElementById(foundId)?.setAttribute("data", "unclicked");
-
-    // document.getElementById(foundId).style.opacity = "0";
   }
-
 });
 
-
-
-document.addEventListener("mouseover",function(e){
-
+document.addEventListener("mouseover", function (e) {
   let asd = projects.find((project) => `${e.target.id}` == project.id);
   // console.log(asd.id)
   let foundId = asd?.id;
@@ -226,12 +228,17 @@ document.addEventListener("mouseover",function(e){
     document.getElementById(e.target.id).style.color = "#E93656";
   } else {
     document.getElementById(foundId)?.setAttribute("data", "unclicked");
-
-    // document.getElementById(foundId).style.opacity = "0";
   }
-  document.querySelectorAll("li").forEach(item => item.id == e.target.id ? item.classList.add("red") : item.classList.add("white"))
-  
-})
+  document
+    .querySelectorAll("li")
+    .forEach((item) =>
+      item.id == e.target.id
+        ? item.classList.add("red")
+        : item.classList.add("white")
+    );
+});
+
+// form code
 
 const inputField = document.getElementById("form");
 const validateEmail = (email) => {
@@ -239,96 +246,74 @@ const validateEmail = (email) => {
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   );
 };
-const fbMessage = document.getElementById("fb-message")
-inputField.addEventListener("submit",function(e){
-  e.preventDefault()
+const fbMessage = document.getElementById("fb-message");
+inputField.addEventListener("submit", function (e) {
+  e.preventDefault();
   const formValues = document.forms.form;
-  
-  try{
-    if(formValues.name.value.length >2){
-      formValues.name.style.border = "5px solid green"
-    }else{
-      
 
-      formValues.name.style.border = "3px solid red"
-      throw new Error("name should be longer")
-
+  try {
+    if (formValues.name.value.length > 2) {
+      formValues.name.style.border = "5px solid green";
+    } else {
+      formValues.name.style.border = "3px solid red";
+      throw new Error("name should be longer");
     }
-    if(formValues.page.value.length >1){
-      formValues.page.style.border = "5px solid green"
-    }else{
-      
-
-      formValues.page.style.border = "3px solid red"
-      throw new Error("webpage name should be longer")
-
-
+    if (formValues.page.value.length > 1) {
+      formValues.page.style.border = "5px solid green";
+    } else {
+      formValues.page.style.border = "3px solid red";
+      throw new Error("webpage name should be longer");
     }
-    if(formValues.message.value.length >8){
-      formValues.message.style.border = "5px solid green"
-
-    }else{
-      
-
-      formValues.message.style.border = "3px solid red"
-      throw new Error("Message should be longer")
-
-
+    if (formValues.message.value.length > 8) {
+      formValues.message.style.border = "5px solid green";
+    } else {
+      formValues.message.style.border = "3px solid red";
+      throw new Error("Message should be longer");
     }
-    if(validateEmail(formValues.email.value ) ){
-      formValues.email.style.border = "5px solid green"
-      console.log(formValues.email.value)
-
-    }else{
-      
-
-      formValues.email.style.border = "3px solid red"
-      throw new Error("invalid email")
-      
-
+    if (validateEmail(formValues.email.value)) {
+      formValues.email.style.border = "5px solid green";
+      console.log(formValues.email.value);
+    } else {
+      formValues.email.style.border = "3px solid red";
+      throw new Error("invalid email");
     }
     const userData = {
       userName: formValues.name.value,
-      
+
       userEmail: formValues.email.value,
-     
-      userPage:formValues.page.value,
-      userMessage:formValues.message.value
+
+      userPage: formValues.page.value,
+      userMessage: formValues.message.value,
     };
-    
+
     const posta = {
-      method:"POST",
+      method: "POST",
       body: JSON.stringify(userData),
-      headers:{
-        "Content-Type":"application/json"
-      }
-    }
-    fetch("https://jsonplaceholder.typicode.com/posts",posta)
-      .then(res => {
-        if(!res.ok){
-          throw new Error("some error ")
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    fetch("https://jsonplaceholder.typicode.com/posts", posta)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("some error ");
         }
         return res.json();
       })
-      .then(data => {
-        fbMessage.style.display =" block"
+      .then((data) => {
+        fbMessage.style.display = " block";
         setTimeout(() => {
-          fbMessage.style.display ="none"
-        }, 3000)
-        formValues.name.value = ""
-        formValues.email.value = ""
-        formValues.page.value = ""
-        formValues.message.value = ""
-      formValues.name.style.border = "3px solid transparent"
-      formValues.page.style.border = "3px solid transparent"
-      formValues.message.style.border = "3px solid transparent"
-      formValues.email.style.border = "3px solid transparent"
-
-
+          fbMessage.style.display = "none";
+        }, 3000);
+        formValues.name.value = "";
+        formValues.email.value = "";
+        formValues.page.value = "";
+        formValues.message.value = "";
+        formValues.name.style.border = "3px solid transparent";
+        formValues.page.style.border = "3px solid transparent";
+        formValues.message.style.border = "3px solid transparent";
+        formValues.email.style.border = "3px solid transparent";
       })
-      .catch(err => console.log(err))
-  }catch(err){
-    
-
-  }
-})
+      .catch((err) => console.log(err));
+  } catch (err) {}
+});

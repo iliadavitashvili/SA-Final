@@ -34,7 +34,7 @@ body {
   margin: 2rem 3rem;
   display: inline-block;
 }
-.swiper-logo-wrapper p {
+.swiper-logo-wrapper p ,footer h2{
   margin: 0;
   padding: 0;
   font-family: "poppins-extraBold", sans-serif;
@@ -48,7 +48,7 @@ body {
   font-size: 13px;
   color: #b3b3b3;
 }
-.swiper-logo-wrapper span {
+.swiper-logo-wrapper span,footer span {
   color: #0081ff;
 }
 .swiper-page-mark {
@@ -773,7 +773,81 @@ textarea {
   text-align: center;
   width: 80%;
 }
+footer{
+  padding-top: 5rem;
+  background-color: #282828;
+  height:500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+.icons{
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 3rem;
+}
+.rights{
+  height: 80px;
+  width: 100%;
+  background-color: #171717;
+  justify-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rights span{
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.rights span:hover{
+  color: #00BEC5;
+}
+.rights p{
+  color: #A0A8B7;
+  font-size: 15px;
+  font-family: "muli",sans-serif;
+}
+.custom-icons{
+  color: #00BEC5;
+  width: 10.5px;
+  height: 20px;
+  cursor: pointer;
+}
+.custom-icons:hover{
+  color:#E93656 ;
+}
+footer span{
+  color: #E93656
+}
+footer h2{
+  font-size: 55px;
+  color: white;
+  
+}
+.footer-ipsum{
+  font-family: "roboto-regular";
+  width: 600px;
+  font-size: 17px;
+  color: #A5A5A5;
+}
 @media (max-width: 750px) {
+  .rights{
+    padding: 1rem;
+  }
+  .icons{
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .custom-icons{
+    scale: 1.5;
+  }
+  .footer-ipsum{
+    width: 80%;
+  }
   .form-container {
     height: 650px;
   }
