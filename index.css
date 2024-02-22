@@ -544,6 +544,9 @@ button {
   width: 45%;
   display: flex;
   height: 500px;
+  padding-top: 3rem;
+  height: auto;
+  gap: 1rem;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
@@ -833,7 +836,22 @@ footer h2{
   font-size: 17px;
   color: #A5A5A5;
 }
+
 @media (max-width: 750px) {
+  .article-content span {
+    margin-top: 2rem;
+  }
+  .project{
+    width: 90vw;
+  }
+  
+  .service-wrapper{
+    background-color: silver;
+    box-sizing: content-box;
+    border: 5px solid rgb(100, 29, 29);
+
+  }
+ 
   .rights{
     padding: 1rem;
   }
@@ -915,10 +933,12 @@ footer h2{
   .article-content {
     height: unset;
     width: 100%;
-    margin: 0.5rem 0;
+    /* margin: 0.5rem 0; */
+    padding: 1rem;
   }
   .services {
     grid-template-columns: repeat(1, 285px);
+   
   }
   .about-section-part-2 {
     flex-direction: column;
