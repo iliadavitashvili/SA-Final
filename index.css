@@ -420,9 +420,16 @@ button {
   
 }
 
-.swiper-pagination-bullets-active span{
-  border-color: black !important;
+.swiper-pagination-bullets .swiper-pagination-bullet{
+  border-color: white !important;
+  opacity: 1 !important;
+
+  
 }
+.swiper-pagination-bullets .swiper-pagination-bullet-active {
+  border-color: #e93656 !important;
+}
+
 #html-bar {
   transition: 0.3s;
 }
@@ -938,7 +945,7 @@ footer h2{
   }
   .recc-swiper p {
     width: 85%;
-    text-align: right;
+    text-align: left;
   }
   .reccommendation-swiper {
     flex-direction: column;
