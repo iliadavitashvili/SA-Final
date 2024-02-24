@@ -397,19 +397,31 @@ button {
   justify-content: center;
   padding-left: 20px;
   gap: 2rem;
-  right: 30%;
-  top: -100px;
+  left: 90% !important;
+  /* justify-content: right !important; */
+  /* top: -100px !important; */
   flex-direction: column;
   z-index: 900;
   margin-right: 50px;
 }
+.red{
+  color: red;
+  border-color: red;
+}
+
+
 .swiper-paginationa span {
   scale: 3;
-  border: 1px solid white;
+  border: 1px solid white !important;
   border-radius: 0;
   color: transparent;
   display: block;
   margin-left: auto;
+  
+}
+
+.swiper-pagination-bullets-active span{
+  border-color: black !important;
 }
 #html-bar {
   transition: 0.3s;
@@ -450,6 +462,7 @@ button {
 .latest-projects li:hover {
   color: #e93656 !important;
 }
+
 .projects {
   width: 900px;
   height: 700px;
@@ -838,6 +851,9 @@ footer h2{
 }
 
 @media (max-width: 750px) {
+  .swiper-paginationa{
+    left: 80% !important;
+  }
   .article-content span {
     margin-top: 2rem;
   }
@@ -936,6 +952,7 @@ footer h2{
     /* margin: 0.5rem 0; */
     padding: 1rem;
   }
+  
   .services {
     grid-template-columns: repeat(1, 285px);
    
